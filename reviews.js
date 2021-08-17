@@ -3,6 +3,8 @@ let restaurants = [["Thai Express",4],["Sansotei Ramen", 5],["World Burger", 3]]
 //set info to restaurants
 let info = restaurants;
 
+createContainer();
+
 function createContainer(){
     //create a for loop that goes through the number of restaurants in restaurants array
     for (let i = 0;  i < restaurants.length; i++){
