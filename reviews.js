@@ -24,7 +24,7 @@ function createContainer(){
 }
 //create setInfo to put information from resturants array into the elements I have created
 function setInfo(contain,title, rate){
-    console.log(info[0]);
+    console.log(info[0][num]);
     for (let num = 0; num < (info[0]).length; num++){
         //check if the current value in the first list of info is a string
         if (typeof (info[0])[num] === "string"){
