@@ -8,6 +8,7 @@ createContainer();
 function createContainer(){
     //create a for loop that goes through the number of restaurants in restaurants array
     for (let i = 0;  i < restaurants.length; i++){
+        console.log(i);
         /*create a div element in js and make it equal to variable contain to hold other elements that will get created 
         let title equal to a p element to hold the name of the restaurant 
         let rate equal to another p element to hold the rating number from 1 to 5 of the restaurant*/
