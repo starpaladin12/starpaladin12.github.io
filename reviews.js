@@ -27,7 +27,7 @@ function setInfo(contain,title, rate){
     console.log(info[0][0]);
     for (let num = 0; num < (info[0]).length; num++){
         //check if the first list of info is the first value
-        if ((info[0][num]).indexOf == 0){
+        if ((info[0]).indexOf(info[0][num])== 0){
             //set the innerhtml of title to the first value 
             title.innerHTML = (info[0])[num];
         }else {
@@ -40,7 +40,7 @@ function setInfo(contain,title, rate){
     info.shift();
     //put the title and rate element into the div element contain
     contain.appendChild(rate);
-    contain.insertBefore(rate, title);
+    contain.appendChild(title);
     //put div element into html body
     return document.body.appendChild(contain);
 
