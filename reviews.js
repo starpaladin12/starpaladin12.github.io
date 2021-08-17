@@ -39,8 +39,8 @@ function setInfo(contain,title, rate){
     //remove the first list in info to add the next information to the next container
     info.shift();
     //put the title and rate element into the div element contain
-    contain.appendChild(rate);
     contain.appendChild(title);
+    contain.appendChild(rate);
     //put div element into html body
     return document.body.appendChild(contain);
 
