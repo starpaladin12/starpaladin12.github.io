@@ -1,6 +1,5 @@
 //create an array that has a lists that contain the name of a restuarant and its ratting
-let restaurants = [["Thai Express",4],["Sansotei Ramen", 5],["World Burger", 3],["test",3]];
-//set info to restaurants
+let restaurants = [["Thai Express",4],["Sansotei Ramen", 5],["World Burger", 3]];
 
 
 createContainer();
@@ -8,9 +7,9 @@ createContainer();
 function createContainer(){
     //create a for loop that goes through the number of restaurants in restaurants array
     console.log(restaurants.length);
-    let info = restaurants;
-    for (let i = 0;  i <= restaurants.length; i++){
-        console.log(restaurants);
+    //set info to the same value as restaurants to change the value but still keep the orginal array in restaurants
+    let info = [["Thai Express",4],["Sansotei Ramen", 5],["World Burger", 3]];
+    for (let i = 0;  i < restaurants.length; i++){
         /*create a div element in js and make it equal to variable contain to hold other elements that will get created 
         let title equal to a p element to hold the name of the restaurant 
         let rate equal to another p element to hold the rating number from 1 to 5 of the restaurant*/
