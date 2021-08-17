@@ -1,15 +1,15 @@
 //create an array that has a lists that contain the name of a restuarant and its ratting
 let restaurants = [["Thai Express",4],["Sansotei Ramen", 5],["World Burger", 3],["test",3]];
 //set info to restaurants
-let info = restaurants;
+
 
 createContainer();
 
 function createContainer(){
     //create a for loop that goes through the number of restaurants in restaurants array
     console.log(restaurants.length);
+    let info = restaurants;
     for (let i = 0;  i <= restaurants.length; i++){
-        console.log(i);
         console.log(restaurants);
         /*create a div element in js and make it equal to variable contain to hold other elements that will get created 
         let title equal to a p element to hold the name of the restaurant 
@@ -22,11 +22,11 @@ function createContainer(){
         title.className = "container";
         rate.className = "container";
         //call function setInfo to put information into each element 
-        setInfo(contain, title, rate);
+        setInfo(contain, title, rate, info);
     }
 }
 //create setInfo to put information from resturants array into the elements I have created
-function setInfo(contain,title, rate){
+function setInfo(contain,title, rate, info){
     for (let num = 0; num < (info[0]).length; num++){
         //check if the first list of info is the first value
         if ((info[0]).indexOf(info[0][num])== 0){
