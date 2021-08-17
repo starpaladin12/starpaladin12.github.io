@@ -29,11 +29,11 @@ function setInfo(contain,title, rate){
         //check if the first list of info is the first value
         if ((info[0][num]).indexOf == 0){
             //set the innerhtml of title to the first value 
-            title.innerHtml = (info[0])[num];
+            title.innerHTML = (info[0])[num];
         }else {
             /*if it is not a string then it must be the ratting number so
             add that value into rate*/ 
-            rate.innerHtml = (info[0])[num];
+            rate.innerHTML = (info[0])[num];
         }
     }
     //remove the first list in info to add the next information to the next container
