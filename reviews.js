@@ -43,6 +43,6 @@ function setInfo(contain,title, rate, info){
     contain.appendChild(title);
     contain.appendChild(rate);
     //put div element into html body
-    document.body.appendChild(contain);
-    return;
+    return document.body.appendChild(contain);
+    
 }
