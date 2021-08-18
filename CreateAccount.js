@@ -2,7 +2,7 @@
 let accounts = [];
 
 //create function for users to create accounts
-function signIn(){
+function signUp(){
     //create username and password 
     let username;
     let password;
@@ -30,3 +30,56 @@ function signIn(){
     //print out account sucessfully created
     return alert("Accoutn sucessfully created");
 }
+//set up global var to see if function already ran
+check = true;
+//function to create forum for user to input account information 
+function signUpForum(check){
+    if (check){
+        check = false
+    }else{
+        return;
+    }
+    //create signInBox = to a div element
+    let signUpBox = document.createElement("div"); 
+    // set id of div element to signUp
+    signUpBox.id = "signUp";
+    //create forum  = forum html tag
+    let forum = document.createElement("forum");
+    //create usernameLabel = label element with for=username
+    let usernameLable = document.createElement("label");
+    usernameLable.setAttribute("for","username");
+    usernameLable.innerHTML = "username:"
+    //create usernameInput = input element 
+    let usernameInput = document.createElement("input");
+    usernameInput.setAttribute("type","text");
+    usernameInput.setAttribute("name","username");
+    //set id for usernameInput to username
+    usernameInput.id = "username";
+    //create passwordlabel = label element with for = password
+    let passwordLabel = document.createElement("label");
+    passwordLabel.setAttribute("for","password");
+    passwordLabel.innerHTML = "password:"
+    //create passwordInput = input element
+    let passwordInput = document.createElement("input");
+    passwordInput.setAttribute("type","text");
+    passwordInput.setAttribute("name","password");
+    //set id for passwordInput to password
+    passwordInput.id = "password";
+    //creat submit = input element type = button
+    let submit = document.createElement("input");
+    submit.setAttribute("type","button");
+    submit.setAttribute("value","Create Account");
+    submit.addEventListener("click", signUp);
+    //put all the input and label tags into a list in order to loop through later
+    let forumTags = [usernameLable,usernameInput,passwordLabel,passwordInput,submit];
+    //append the tags from the list into forum tag using a for loop
+    for( let i = 0; i < forumTags.length; i++){
+        forum.append(document.createElement("br"));
+        forum.appendChild(forumTags[i]);
+        
+    }
+    //append forum tag into div tag 
+    signUpBox.appendChild(forum);
+    //show div tag on body
+    return document.body.appendChild(signUpBox);
+} 
