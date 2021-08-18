@@ -8,6 +8,9 @@ function signIn(){
     //get value from username and password input and store it in username and password
     username = document.getElementById("username").value;
     password = document.getElementById("password").value;
+    //get rid of values in the text field
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
     //check if username and password === undefined
     if (username === "" || password === ""){
         //if yes then show alert nothing has been entered
