@@ -1,5 +1,5 @@
 //create a list to hold all the accounts made by users
-export let accounts = [];
+let accounts = [];
 //create function for users to create accounts
 function signIn(){
     //create username and password 
@@ -27,6 +27,7 @@ function signIn(){
     //if username is not already in accounts list then add it with password as a nested array
     accounts.push([username,password]);
     //print out account sucessfully created
-    return alert("Accoutn sucessfully created");
-    
+    alert("Accoutn sucessfully created");
+    export default accounts;
+    return;
 }
