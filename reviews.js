@@ -53,6 +53,15 @@ function setInfo(contain,title, rate, info, box, click){
     click.appendChild(contain);
     box.appendChild(click);
     //put div element into html body
-    return document.body.appendChild(box);
-    
+    return document.body.appendChild(box);   
+}
+
+function openPage(){
+    //create a list and have all files to open with openPage inside the array
+    let files  = []
+    //set each button0,1,2 created to open a new file
+    //loop through the length of restaurant array
+    for (let i = 0; i < restaurants.length; i++){
+        document.getElementById("button"+i).on
+    }
 }
