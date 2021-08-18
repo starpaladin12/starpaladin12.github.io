@@ -16,16 +16,23 @@ function createContainer(){
         let contain = document.createElement("div");
         let title = document.createElement("p");
         let rate = document.createElement("p");
+        //create box to equal a div element and click to equal a button element
+        let box = document.createElement("div");
+        let click = document.createElement("button");
         //set the class of the div and two other p elements to container in order to design them later
         contain.className = "container";
         title.className = "container";
         rate.className = "container";
+        //set class name for box as box
+        box.className = "box";
+        //create id for button to be button plus the value of i 
+        click.id = "button"+i;
         //call function setInfo to put information into each element 
-        setInfo(contain, title, rate, info);
+        setInfo(contain, title, rate, info, box, click);
     }
 }
 //create setInfo to put information from resturants array into the elements I have created
-function setInfo(contain,title, rate, info){
+function setInfo(contain,title, rate, info, box, click){
     for (let num = 0; num < (info[0]).length; num++){
         //check if the first list of info is the first value
         if ((info[0]).indexOf(info[0][num])== 0){
@@ -42,7 +49,10 @@ function setInfo(contain,title, rate, info){
     //put the title and rate element into the div element contain
     contain.appendChild(title);
     contain.appendChild(rate);
+    //put contain into click and click into box
+    click.appendChild(contain);
+    box.appendChild(click);
     //put div element into html body
-    return document.body.appendChild(contain);
+    return document.body.appendChild(box);
     
 }
