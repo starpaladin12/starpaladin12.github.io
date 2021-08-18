@@ -1,5 +1,5 @@
 //create a list to hold all the accounts made by users
-let accounts = [];
+export let accounts = [];
 //create function for users to create accounts
 function signIn(){
     //create username and password 
