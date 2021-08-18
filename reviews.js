@@ -1,5 +1,5 @@
 //create an array that has a lists that contain the name of a restuarant and its ratting
-let restaurants = [["Thai Express",4],["Sansotei Ramen", 5],["World Burger", 3]];
+let restaurants = [["Thai Express",4],["Lone Star", 2],["World Burger", 3]];
 
 
 createContainer();
