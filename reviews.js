@@ -62,6 +62,6 @@ function openPage(){
     //set each button0,1,2 created to open a new file
     //loop through the length of restaurant array
     for (let i = 0; i < files.length; i++){
-        document.getElementById("button"+i).onclick = "document.location.href = " +files[i];
+        document.getElementById("button"+i).onclick = function(){setInfo};
     }
 }
