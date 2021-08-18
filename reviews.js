@@ -56,6 +56,7 @@ function setInfo(contain,title, rate, info, box, click, files){
     //put contain into click and click into box
     click.appendChild(contain);
     //put click inside the a element
+    console.log(click)
     link.appendChild(click);
     box.appendChild(link);
     //put div element into html body
