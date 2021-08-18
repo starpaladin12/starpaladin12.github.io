@@ -28,5 +28,5 @@ function signIn(){
     accounts.push([username,password]);
     //print out account sucessfully created
     alert("Accoutn sucessfully created");
-    return;
+    return console.log(accounts);
 }
