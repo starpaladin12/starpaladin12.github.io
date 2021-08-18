@@ -6,7 +6,6 @@ createContainer();
 
 function createContainer(){
     //create a for loop that goes through the number of restaurants in restaurants array
-    console.log(restaurants.length);
     //set info to the same value as restaurants to change the value but still keep the orginal array in restaurants
     let info = [["Thai Express",4],["Sansotei Ramen", 5],["World Burger", 3]];
     for (let i = 0;  i < restaurants.length; i++){
@@ -30,6 +29,7 @@ function createContainer(){
         //call function setInfo to put information into each element 
         setInfo(contain, title, rate, info, box, click);
     }
+    openPage();
 }
 //create setInfo to put information from resturants array into the elements I have created
 function setInfo(contain,title, rate, info, box, click){
@@ -58,10 +58,10 @@ function setInfo(contain,title, rate, info, box, click){
 
 function openPage(){
     //create a list and have all files to open with openPage inside the array
-    let files  = []
+    let files  = ["WorldBurger.html", "LoneStar.html", "ThaiExpress.html"];
     //set each button0,1,2 created to open a new file
     //loop through the length of restaurant array
-    for (let i = 0; i < restaurants.length; i++){
-        document.getElementById("button"+i).on
+    for (let i = 0; i < files.length; i++){
+        document.getElementById("button"+i).onclick = "document.location.href = " +files[i];
     }
 }
