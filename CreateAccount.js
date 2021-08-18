@@ -33,11 +33,16 @@ function signUp(){
 //set up global var to see if function already ran
 check = true;
 //function to create forum for user to input account information 
-function signUpForum(check){
-    if (check){
+function signUpForum(){
+    //check if funciton is called twice 
+    if (check == true){
+        //if not then change check to false 
         check = false
     }else{
-        return;
+        //set check back to true
+        check = true
+        //if function called twice then remove div
+        return document.getElementById("signUp").remove();
     }
     //create signInBox = to a div element
     let signUpBox = document.createElement("div"); 
