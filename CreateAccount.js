@@ -22,5 +22,6 @@ function signIn(){
        }
    }
     //if username is not already in accounts list then add it with password as a nested array
-    return accounts.push([username,password]);
+     accounts.push([username,password]);
+     return console.log(accounts);
 }
