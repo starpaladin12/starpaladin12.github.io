@@ -48,8 +48,10 @@ function setInfo(contain,title, rate, info, box, click, files){
     //remove the first list in info to add the next information to the next container
     info.shift();
     //set link to an a element
-    let link = document.createElement("a").setAttribute("herf",files[0]);
+    let link = document.createElement("a")
+    link.setAttribute("href",files[0]);
     //remove the first value of files 
+    files.shift();
     //put the title and rate element into the div element contain
     contain.appendChild(title);
     contain.appendChild(rate);
