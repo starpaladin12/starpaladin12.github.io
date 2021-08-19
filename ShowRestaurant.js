@@ -14,6 +14,8 @@ function createContainer(){
         let contain = document.createElement("div");
         let title = document.createElement("p");
         let rate = document.createElement("p");
+        //set id for rate
+        rate.id = "resturantRate";
         //create box to equal a div element and click to equal a button element
         let box = document.createElement("div");
         let click = document.createElement("button");
@@ -105,9 +107,7 @@ function WorldBurgerReviews(){
 //create setInfo to put information from resturants array into the elements I have created
 function setInfo(contain,title, rate, info, box, click){
     title.innerHTML = (info[0])[0];
-    /*if it is not a string then it must be the ratting number so
-    add that value into rate*/ 
-    rate.innerHTML = (info[0])[1];
+    rate.innerHTML = "Average Rating:  "+(info[0])[1];
     //remove the first list in info to add the next information to the next container
     info.shift();
     //put the title and rate element into the div element contain
