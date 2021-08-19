@@ -5,6 +5,10 @@ function writeReview(){
 reviewCheck = true;
 //function to create a forum for users to write their reviews
 function reviewForum(){
+    //check if activeAccount is not null which means user is no loged in then return message
+    if (activeAccount === null){
+        return alert("You need to create an account and log in\n to write a review.");
+    }
     //check if reviewCheck is true
     if (reviewCheck){
         /*change reviewCheck to false because it lets the 
