@@ -31,7 +31,7 @@ function writeReview(){
             //state reviewInfo to a p tag
             let reviewInfo = document.createElement("p");
             //put content and rating into reviewInfo
-            reviewInfo.innerHTML = "Rating"+review[2]+review[1];
+            reviewInfo.innerHTML = "Rating given: "+review[2]+"<br>"+review[1];
             //append reviewInfo into reviewContain
             reviewContain.appendChild(reviewInfo);
         }
