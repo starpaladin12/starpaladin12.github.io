@@ -21,7 +21,8 @@ function logIn(){
             //print out login is complete 
             alert("login is complete");
             //set active account to the nested list with username and password
-            return activeAccount = accounts[i];
+             activeAccount = accounts[i];
+             return console.log(activeAccount)
         }
     }
     //if username and password is not in accounts then show message
