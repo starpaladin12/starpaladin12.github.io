@@ -20,7 +20,7 @@ function writeReview(){
         return alert("You did not enter a rating\n try again.");
     }
     //put position, content and rating into a dic with the key being the active account and store it in reviews
-    let review ={activeAccount: [position, content, rating]};
+    let review = [activeAccount, position, content, rating, ];
     //loop through restaurants to check which restaurant to put the review in
     for(let i = 0; i < restaurants.length; i++){
         //check if the title of the resturant is equal to postion 
