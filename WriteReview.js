@@ -59,5 +59,16 @@ function reviewForum(){
     //review id = review
     review.id = "review";
     //put all elements that need to be in forum tag inside a list in order to easilly append them into forum
-    let forumTags = [pickLabel,pick,ratingLabel,rating,reviewLable,review]
+    let forumTags = [pickLabel,pick,ratingLabel,rating,reviewLable,review];
+    //loop through forumTags in order to append each tag into forum 
+    for (let tag = 0; tag < forumTags.length; tag++){
+        //create br element to append into forum
+        forum.appendChild(document.createElement("br"));
+        //append an element in forumTags into forum
+        forum.appendChild(forumTags[tag]);
+    }
+    //put forum element into the div element
+    reviewBox.appendChild(forum);
+    //return with the div appened into the body 
+    return document.body.appendChild(reviewBox);
 }
