@@ -19,8 +19,8 @@ function writeReview(){
     }else if (rating === null){
         return alert("You did not enter a rating\n try again.");
     }
-    //put position, content and rating into a list and store it in review
-    let review = [position, content, rating];
+    //put position, content and rating into a dic with the key being the active account and store it in reviews
+    let review ={activeAccount: [position, content, rating]};
     //loop through restaurants to check which restaurant to put the review in
     for(let i = 0; i < restaurants.length; i++){
         //check if the title of the resturant is equal to postion 
@@ -32,16 +32,17 @@ function writeReview(){
             //state reviewInfo to a p tag
             let reviewInfo = document.createElement("p");
             //put content and rating into reviewInfo
-            reviewInfo.innerHTML = "Rating given: "+review[2]+"<br>"+review[1];
+            reviewInfo.innerHTML = "Rating given: "+rating+"<br>"+content;
             //append reviewInfo into reviewContain
             reviewContain.appendChild(reviewInfo);
             reviewsTag.push(reviewContain);
         }
     }
     //call avgRate
-    //test if you can save html tags in a list?
+    
     //put review into reviews as a nested array
-    return reviews.push(review);
+    reviews.push(review);
+    return console.log(reviews);
 }
 //variable to check if function is called twice or once
 reviewCheck = true;
