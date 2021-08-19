@@ -39,13 +39,19 @@ function logOutButton(){
     let logout = document.createElement("button");
     logout.setAttribute("type","button");
     logout.addEventListener("click",logOut);
+    //set value inside button
+    logout.innerHTML = "Log out";
     //state logout id to be logout
     logout.id = "logout"
     //append logout into body beside the other buttons
-    return document.body.insertAdjacentElement("afterbegin",document.getElementById("writeReview"));
+     
+    return document.getElementById("writeReview").insertAdjacentElement("beforebegin",logout);
 }
 function logOut(){
-    return;
+    //get rid of value in activeAccount
+    activeAccount = null;
+    //get rid of the log out button 
+    return document.getElementById("logout").remove();
 }
 logcheck = true;
 function logInForum(){
