@@ -26,11 +26,26 @@ function logIn(){
             alert("login is complete");
             //set active account to the nested list with username and password
              activeAccount = accounts[i];
-             return console.log(activeAccount);
+             //a function to create a log out button 
+             return logOutButton() ;
         }
     }
     //if username and password is not in accounts then show message
     return alert("No account exists with that account name");
+}
+//logOutButton creates the button to log out
+function logOutButton(){
+    //state logout to be a button element and state the type to button and onclick to logOut function
+    let logout = document.createElement("button");
+    logout.setAttribute("type","button");
+    logout.addEventListener("click",logOut);
+    //state logout id to be logout
+    logout.id = "logout"
+    //append logout into body beside the other buttons
+    return document.body.insertAdjacentElement("afterbegin",document.getElementById("writeReview"));
+}
+function logOut(){
+    return;
 }
 logcheck = true;
 function logInForum(){
