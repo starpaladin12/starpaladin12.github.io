@@ -42,7 +42,7 @@ function writeReview(){
     
     //put review into reviews as a nested array
     reviews.push(review);
-    return console.log(reviews);
+    return console.log(reviews[0][activeAccount]);
 }
 //variable to check if function is called twice or once
 reviewCheck = true;
