@@ -65,8 +65,13 @@ function reviewForum(){
     review.setAttribute("name","review");
     //review id = review
     review.id = "review";
+    //state create to be inpue tag with type = button with a click event and a value
+    let create = document.createElement("input");
+    create.setAttribute("type","button");
+    create.setAttribute("value","Create");
+    create.addEventListener("click",writeReview);
     //put all elements that need to be in forum tag inside a list in order to easilly append them into forum
-    let forumTags = [pickLabel,pick,ratingLabel,rating,reviewLable,review];
+    let forumTags = [pickLabel,pick,ratingLabel,rating,reviewLable,review,create];
     //loop through forumTags in order to append each tag into forum 
     for (let tag = 0; tag < forumTags.length; tag++){
         //create br element to append into forum
