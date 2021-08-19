@@ -9,7 +9,7 @@ function signUp(){
     //get value from username and password input and store it in username and password
     username = document.getElementById("username").value;
     password = document.getElementById("password").value;
-    //get rid of values in the text field
+    //get rid of values a sucessin the text field
     document.getElementById("username").value = "";
     document.getElementById("password").value = "";
     //check if username and password === undefined
@@ -31,16 +31,16 @@ function signUp(){
     return alert("Accoutn sucessfully created");
 }
 //set up global var to see if function already ran
-check = true;
+signCheck = true;
 //function to create forum for user to input account information 
 function signUpForum(){
     //check if funciton is called twice 
-    if (check == true){
+    if (signCheck == true){
         //if not then change check to false 
-        check = false
+        signCheck = false
     }else{
         //set check back to true
-        check = true
+        signCheck = true
         //if function called twice then remove div
         return document.getElementById("signUp").remove();
     }
