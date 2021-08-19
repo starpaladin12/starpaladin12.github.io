@@ -28,7 +28,7 @@ function signUp(){
     //if username is not already in accounts list then add it with password as a nested array
     accounts.push([username,password]);
     //print out account sucessfully created
-    return alert("Accoutn sucessfully created");
+    return alert("Account sucessfully created");
 }
 //set up global var to see if function already ran
 signCheck = true;
