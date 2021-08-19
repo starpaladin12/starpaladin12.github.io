@@ -24,10 +24,12 @@ function logIn(){
         if ((accounts[i]).includes(username) && (accounts[i]).includes(password)){
             //print out login is complete 
             alert("login is complete");
-            //set active account to the nested list with username and password
-             activeAccount = accounts[i];
-             //a function to create a log out button 
-             return logOutButton() ;
+            //set active account to the nested list but only the username 
+             activeAccount = accounts[i][0];
+             //call a function to create a log out button 
+             logOutButton();
+             //call a function to create a show account reviews button
+             return showReviewsButton();
         }
     }
     //if username and password is not in accounts then show message
@@ -50,6 +52,10 @@ function logOutButton(){
 function logOut(){
     //get rid of value in activeAccount
     activeAccount = null;
+    //get rid of write review forum
+    if (document.getElementById("reviewContain") != null){
+        document.getElementById("reviewContain").remove();
+    }
     //get rid of the log out button 
     return document.getElementById("logout").remove();
 }

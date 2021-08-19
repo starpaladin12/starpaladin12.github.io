@@ -44,7 +44,27 @@ function writeReview(){
     return reviews.push(review);
     
 }
+reviewscheck = true
+function showReviewsButton(){
+    //state showReview to be a button element and state the type to button and onclick to showReviewfunction
+    let showReview = document.createElement("button");
+    showReview.setAttribute("type","button");
+    showReview.addEventListener("click",showReviews);
+    //set value inside button
+    showReview.innerHTML = "Show your reviews";
+    //state logout id to be logout
+    showReview.id = "showReviews"
+    //append logout into body beside the other buttons
+     
+    return document.getElementById("writeReview").insertAdjacentElement("afterend",showReview);
+}
 function showReviews(){
+    if (reviewscheck){
+        reviewscheck = false;
+    }else{
+        reviewscheck = true;
+        return document.getElementById("accountReviews").remove()
+    }
     //create a div element to hold all the reviews created for that account
     let personalReviews = document.createElement("div");
     personalReviews = "accountReviews"
