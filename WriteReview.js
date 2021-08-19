@@ -20,10 +20,14 @@ function reviewForum(){
     reviewBox.id = "review";
     //state forum to store a forum element
     let forum = document.createElement("forum");
+    //create a label for pick 
+    let pickLabel = document.createElement("label");
+    pickLabel.setAttribute("for","restaurants");
+    pickLabel.innerHTML = "Pick a restaurant to review: ";
     //state pick to a select tag that has the options be the restaurant names that are in the website right now
     let pick = document.createElement("select");
     //give a name of resturants and id of pickReview to select tag
-    pick.setAttribute("name","resturants");
+    pick.setAttribute("name","restaurants");
     pick.id = "pickReview";
     //for loop through resturants array 
     for (let i = 0; i < restaurants.length; i++){
@@ -34,14 +38,24 @@ function reviewForum(){
         //append options into pick to have all the options tag created be inside select tag
         pick.appendChild(options);
     }
-    //state ratting to store a input element with number type
-    let ratting = document.createElement("input");
-    ratting.setAttribute("type","number");
+    // create a label for ratting
+    let ratingLabel = document.createElement("label");
+    ratingLabel.setAttribute("for","rate");
+    ratingLabel.innerHTML = "Provide a rating:"
+    //state ratting to store a input element with number type and name rate
+    let rating = document.createElement("input");
+    rating.setAttribute("type","number");
+    rating.setAttribute("name","rate");
     //set the id for ratting to rate
-    ratting.id = "rate";
-    //state review = to a input tag with type = text
+    rating.id = "rate";
+    //create a label for review
+    let reviewLable = document.createElement("label");
+    reviewLable.setAttribute("for","review");
+    reviewLable.innerHTML = "Write a review:";
+    //state review = to a input tag with type = text and name is reivew
     let reviews = document.createElement("input")
     reviews.setAttribute("type","text");
+    reviews.setAttribute("name","review");
     //review id = review
     reviews.id = "review";
 
