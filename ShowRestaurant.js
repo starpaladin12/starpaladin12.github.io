@@ -34,17 +34,10 @@ function createContainer(){
 }
 //create setInfo to put information from resturants array into the elements I have created
 function setInfo(contain,title, rate, info, box, click, files){
-    for (let num = 0; num < (info[0]).length; num++){
-        //check if the first list of info is the first value
-        if ((info[0]).indexOf(info[0][num])== 0){
-            //set the innerhtml of title to the first value 
-            title.innerHTML = (info[0])[num];
-        }else {
-            /*if it is not a string then it must be the ratting number so
-            add that value into rate*/ 
-            rate.innerHTML = (info[0])[num];
-        }
-    }
+    title.innerHTML = (info[0])[0];
+    /*if it is not a string then it must be the ratting number so
+    add that value into rate*/ 
+    rate.innerHTML = (info[0])[1];
     //remove the first list in info to add the next information to the next container
     info.shift();
     //set link to an a element
