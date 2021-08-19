@@ -35,7 +35,14 @@ function createContainer(){
     document.getElementById("button1").addEventListener("click",LoneStarReviews);
     document.getElementById("button2").addEventListener("click",WorldBurgerReviews);
 }
+check1 = true;
 function ThaiExpressReviews(){
+    if (check1){
+        check1 = false;
+    }else{
+        check1 = true;
+        return document.getElementById("firstReviews").remove();
+    }
     //create a div element to store all the reviews 
     let reviewsContainer = document.createElement("div");
     reviewsContainer.className = "reviewList";
@@ -50,7 +57,14 @@ function ThaiExpressReviews(){
     let refrence = document.getElementById("icon0");
     return refrence.insertAdjacentElement("afterend",reviewsContainer);
 }
+check2 = true;
 function LoneStarReviews(){
+    if (check2){
+        check2 = false;
+    }else{
+        check2 = true;
+        return document.getElementById("secondReviews").remove();
+    }
      //create a div element to store all the reviews 
      let reviewsContainer = document.createElement("div");
      reviewsContainer.className = "reviewList";
@@ -65,7 +79,14 @@ function LoneStarReviews(){
      let refrence = document.getElementById("icon1");
      return refrence.insertAdjacentElement("afterend",reviewsContainer);
 }
+check3 = true
 function WorldBurgerReviews(){
+    if (check3){
+        check3 = false;
+    }else{
+        check3 = true;
+        return document.getElementById("thirdReviews").remove();
+    }
      //create a div element to store all the reviews 
      let reviewsContainer = document.createElement("div");
      reviewsContainer.className = "reviewList";
