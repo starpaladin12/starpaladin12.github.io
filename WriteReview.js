@@ -46,6 +46,9 @@ function reviewForum(){
     let rating = document.createElement("input");
     rating.setAttribute("type","number");
     rating.setAttribute("name","rate");
+    //set a min and max for number field to let user provide a ratting from 1 to 5
+    rating.setAttribute("min",1);
+    rating.setAttribute("max",5);
     //set the id for ratting to rate
     rating.id = "rate";
     //create a label for review
