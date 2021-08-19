@@ -5,6 +5,9 @@ function logIn(){
     //take the value from the user in usernameLog and passwordLog
     username = document.getElementById("usernameLogin").value;
     password = document.getElementById("passwordLogin").value;
+    //get rid of value in the text field
+    document.getElementById("usernameLogin").value = "";
+    document.getElementById("passwordLogin").value = "";
     //check if username or password is empty
     if (username === "" || password === ""){
         //return message
