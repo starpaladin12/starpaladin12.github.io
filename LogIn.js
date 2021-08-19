@@ -1,3 +1,5 @@
+//state activeAccount to null
+let activeAccount = null;
 function logIn(){
     //state username and password
     let username;
@@ -17,7 +19,9 @@ function logIn(){
     for (let i = 0; i < accounts.length; i++){
         if ((accounts[i]).includes(username) && (accounts[i]).includes(password)){
             //print out login is complete 
-            return alert("login is complete");
+            alert("login is complete");
+            //set active account to the nested list with username and password
+            return activeAccount = accounts[i];
         }
     }
     //if username and password is not in accounts then show message
