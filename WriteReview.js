@@ -29,8 +29,8 @@ function reviewForum(){
     for (let i = 0; i < restaurants.length; i++){
         //state options to = an options tag and set that value and inner html to the first value of each nested array looped through
        let options = document.createElement("option");
-       options.setAttribute("value",(restaurnats[i])[0]);
-       options.innerHTML = (restaurnats[i])[0];
+       options.setAttribute("value",(restaurants[i])[0]);
+       options.innerHTML = (restaurants[i])[0];
         //append options into pick to have all the options tag created be inside select tag
         pick.appendChild(options);
     }
