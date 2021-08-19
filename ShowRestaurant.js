@@ -3,7 +3,6 @@ let restaurants = [["Thai Express",4],["Lone Star", 2],["World Burger", 3]];
 
 
 createContainer();
-
 function createContainer(){
     //create a for loop that goes through the number of restaurants in restaurants array
     //set info to the same value as restaurants to change the value but still keep the orginal array in restaurants
@@ -24,10 +23,17 @@ function createContainer(){
         rate.className = "container";
         //set class name for box as box
         box.className = "box";
+        //give click a onclick event to activate a function
+        click.addEventListener("click",openReviews)
         //create id for button to be button plus the value of i 
         click.id = "button"+i;
         //call function setInfo to put information into each element 
         setInfo(contain, title, rate, info, box, click);
+    }
+}
+function openReviews(){
+    if (document.getElementById("button0").clicked == true){
+        return alert("test work")
     }
 }
 //create setInfo to put information from resturants array into the elements I have created
