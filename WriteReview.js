@@ -1,5 +1,44 @@
+let reviews = [];
 function writeReview(){
-    return;
+    //state position, content, rating
+    let position;
+    let content;
+    let rating;
+    //let position to equal the resturant user picked
+    position = document.getElementById("pickReview").value;
+    //let content to equal the review the user made
+    content = document.getElementById("review").value;
+    //let rating equal the rating num given
+    rating =document.getElementById("rate").value;
+    //check if user entered nothing for ether position, content, rating
+    if (position === null){
+        return alert("You did not enter which restaurant to review\n try again.");
+    }else if (content === null){
+        return alert("You did not enter a review\n try again.");
+    }else if (rating === null){
+        return alert("You did not enter a rating\n try again.");
+    }
+    //put position, content and rating into a list and store it in review
+    let review = [position, content, rating];
+    //loop through restaurants to check which restaurant to put the review in
+    for(let i = 0; i < restaurants.length; i++){
+        //check if the title of the resturant is equal to postion 
+        if(restaurants[i][0] == position){
+            //set reviewContain to a dev element
+            let reviewContain = document.createElement("div");
+            //set reviewContain class to the restaurant name
+            reviewContain.className = restaurants[i][0];
+            //state reviewInfo to a p tag
+            let reviewInfo = document.createElement("p");
+            //put content and rating into reviewInfo
+            reviewInfo.innerHTML = "Rating"+review[2]+review[1];
+            //append reviewInfo into reviewContain
+            reviewContain.appendChild(reviewInfo);
+        }
+    }
+    //call avgRate
+    //put review into reviews as a nested array
+    return reviews.push(review);
 }
 //variable to check if function is called twice or once
 reviewCheck = true;
@@ -21,7 +60,7 @@ function reviewForum(){
     //state reviewBox to store a div element
     let reviewBox = document.createElement("div");
     //give id review to div element
-    reviewBox.id = "review";
+    reviewBox.id = "reviewContain";
     //state forum to store a forum element
     let forum = document.createElement("forum");
     //create a label for pick 
