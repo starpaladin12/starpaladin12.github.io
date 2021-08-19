@@ -20,15 +20,15 @@ function logIn(){
     //if username and password is not in accounts then show message
     return alert("No account exists with that account name");
 }
-logCheck = true;
+logcheck = true;
 function logInForum(){
     //check if funciton is called twice 
-    if (logCheck == true){
+    if (logcheck == true){
         //if not then change check to false 
-        logCheck = false
+        logcheck = false
     }else{
         //set check back to true
-        logCheck = true
+        logcheck = true
         //if function called twice then remove div
         return document.getElementById("signUp").remove();
     }
