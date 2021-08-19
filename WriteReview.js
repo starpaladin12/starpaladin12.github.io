@@ -1,4 +1,5 @@
 let reviews = [];
+let reviewsTag = [];
 function writeReview(){
     //state position, content, rating
     let position;
@@ -37,6 +38,8 @@ function writeReview(){
         }
     }
     //call avgRate
+    //test if you can save html tags in a list?
+    reviewsTag.push([reviewContain]);
     //put review into reviews as a nested array
     return reviews.push(review);
 }
@@ -55,7 +58,7 @@ function reviewForum(){
         reviewCheck = false; 
     }else{
         reviewCheck = true;
-        return document.getElementById("review").remove();
+        return document.getElementById("reviewContain").remove();
     }
     //state reviewBox to store a div element
     let reviewBox = document.createElement("div");
