@@ -20,7 +20,7 @@ function writeReview(){
         return alert("You did not enter a rating\n try again.");
     }
     //put position, content and rating into a dic with the key being the active account and store it in reviews
-    let review = [activeAccount, position, content, rating, ];
+    let review = [activeAccount, position, content, rating];
     //loop through restaurants to check which restaurant to put the review in
     for(let i = 0; i < restaurants.length; i++){
         //check if the title of the resturant is equal to postion 
@@ -41,8 +41,26 @@ function writeReview(){
     //call avgRate
     
     //put review into reviews as a nested array
-    reviews.push(review);
-    return console.log(reviews[0][activeAccount]);
+    return reviews.push(review);
+    
+}
+function showReviews(){
+    //create a div element to hold all the reviews created for that account
+    let personalReviews = document.createElement("div");
+    personalReviews = "accountReviews"
+    //go through reviews list with loop
+    for (let i = 0; i < reviews.length; i++){
+        //check if current account is the same account used to make the reviews 
+        if (reviews[i][0] == activeAccount){
+            //if so then combine all the review elments: positon, rating, and content to show the review the user made
+            let review = document.createElement("p");
+            review.id = "review"+i;
+            review.innerHTML = "Reviewed: "+reviews[i][1]+"<br>"+"Rating given: "+reviews[i][3]+"<br>"+reviews[i][2];
+            personalReviews.appendChild(review);
+        }
+    } 
+    //return with review append into div element and then appended into body
+    return document.body.appendChild(personalReviews);
 }
 //variable to check if function is called twice or once
 reviewCheck = true;
