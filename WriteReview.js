@@ -10,13 +10,20 @@ function writeReview(){
     //let content to equal the review the user made
     content = document.getElementById("review").value;
     //let rating equal the rating num given
-    rating =document.getElementById("rate").value;
+    rating = document.getElementById("rate").value;
+    //remove the values from the text field
+    document.getElementById("review").value = "";
+    document.getElementById("rate").value = "";
+    //check if rating is not between 1 to 5 range
+    if (rating < 1 || rating > 5){
+        return alert("You can not enter that rating");
+    }
     //check if user entered nothing for ether position, content, rating
-    if (position === null){
+    if (position == ""){
         return alert("You did not enter which restaurant to review\n try again.");
-    }else if (content === null){
+    }else if (content == ""){
         return alert("You did not enter a review\n try again.");
-    }else if (rating === null){
+    }else if (rating == ""){
         return alert("You did not enter a rating\n try again.");
     }
     //put position, content and rating into a dic with the key being the active account and store it in reviews
@@ -40,6 +47,8 @@ function writeReview(){
     }
     //call avgRate
     
+    //show that review has been created
+    alert("Review created");
     //put review into reviews as a nested array
     return reviews.push(review);
     
@@ -59,6 +68,10 @@ function showReviewsButton(){
     return document.getElementById("writeReview").insertAdjacentElement("afterend",showReview);
 }
 function showReviews(){
+    //check if no reviews have been created
+    if (reviews.length == 0){
+        return alert("No reviews have been created");
+    }
     if (reviewscheck){
         reviewscheck = false;
     }else{
@@ -67,7 +80,7 @@ function showReviews(){
     }
     //create a div element to hold all the reviews created for that account
     let personalReviews = document.createElement("div");
-    personalReviews = "accountReviews"
+    personalReviews.id = "accountReviews"
     //go through reviews list with loop
     for (let i = 0; i < reviews.length; i++){
         //check if current account is the same account used to make the reviews 

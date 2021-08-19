@@ -56,6 +56,12 @@ function logOut(){
     if (document.getElementById("reviewContain") != null){
         document.getElementById("reviewContain").remove();
     }
+    //get rid of accounts reviews
+    if (document.getElementById("accountReviews") != null){
+        document.getElementById("accountReviews").remove();
+    }
+    //get rid of show reviews button
+    document.getElementById("showReviews").remove();
     //get rid of the log out button 
     return document.getElementById("logout").remove();
 }

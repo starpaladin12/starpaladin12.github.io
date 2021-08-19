@@ -41,8 +41,9 @@ function signUpForum(){
     }else{
         //set check back to true
         signCheck = true
-        //if function called twice then remove div
+        //if function called twice then remove div and forum
         return document.getElementById("signUp").remove();
+        
     }
     //create signInBox = to a div element
     let signUpBox = document.createElement("div"); 
@@ -50,6 +51,7 @@ function signUpForum(){
     signUpBox.id = "signUp";
     //create forum  = forum html tag
     let forum = document.createElement("forum");
+    forum.id = "forum"
     //create usernameLabel = label element with for=username
     let usernameLable = document.createElement("label");
     usernameLable.setAttribute("for","username");
