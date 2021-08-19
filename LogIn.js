@@ -30,7 +30,7 @@ function logInForum(){
         //set check back to true
         logcheck = true
         //if function called twice then remove div
-        return document.getElementById("signUp").remove();
+        return document.getElementById("logIn").remove();
     }
     //create signInBox = to a div element
     let logInBox = document.createElement("div"); 
