@@ -15,6 +15,10 @@ function logIn(){
         //return message
         return alert("You entered nothing")
     }
+    //check if there is a value in active account and if so return message
+    if (activeAccount != null){
+        return alert("You already loged in");
+    }
     //go through accounts list to check if username and password is in nested array
     for (let i = 0; i < accounts.length; i++){
         if ((accounts[i]).includes(username) && (accounts[i]).includes(password)){
@@ -22,7 +26,7 @@ function logIn(){
             alert("login is complete");
             //set active account to the nested list with username and password
              activeAccount = accounts[i];
-             return console.log(activeAccount)
+             return console.log(activeAccount);
         }
     }
     //if username and password is not in accounts then show message
