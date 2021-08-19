@@ -34,6 +34,8 @@ function reviewForum(){
         //append options into pick to have all the options tag created be inside select tag
         pick.appendChild(options);
     }
+    //(test) put pick into body tag
+    return document.body.appendChild(pick);
     
     //state ratting to store a input element with number type
     //set the id for ratting to rate
