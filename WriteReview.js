@@ -34,9 +34,15 @@ function reviewForum(){
         //append options into pick to have all the options tag created be inside select tag
         pick.appendChild(options);
     }
-    
     //state ratting to store a input element with number type
+    let ratting = document.createElement("input");
+    ratting.setAttribute("type","number");
     //set the id for ratting to rate
+    ratting.id = "rate";
     //state review = to a input tag with type = text
+    let reviews = document.createElement("input")
+    reviews.setAttribute("type","text");
     //review id = review
+    reviews.id = "review";
+
 }
