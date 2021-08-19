@@ -12,7 +12,7 @@ function reviewForum(){
         reviewCheck = false; 
     }else{
         reviewCheck = true;
-        return;
+        return document.getElementById("review").remove();
     }
     //state reviewBox to store a div element
     let reviewBox = document.createElement("div");
