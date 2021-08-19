@@ -46,7 +46,7 @@ function writeReview(){
         }
     }
     //call avgRate
-    
+    avgRate(position,rating);
     //show that review has been created
     alert("Review created");
     //put review into reviews as a nested array
@@ -177,4 +177,18 @@ function reviewForum(){
     reviewBox.appendChild(forum);
     //return with the div appened into the body 
     return document.body.appendChild(reviewBox);
+}
+function avgRate(position,rating){
+    //check which restaurant to take rating from using loop
+    for ( let i = 0; i <restaurants.length; i++){
+        if (restaurants[i][0] == position){
+            //take the rating of the restaurant and find avg rate
+            console.log(rating);
+            console.log(restaurants[i][1]);
+            let sum = rating + restaurants[i][1];
+            let avg = Math.round(sum/2);
+            return document.getElementById("resturantRate").innerHTML = "Average Rating: "+avg;
+        }
+    }
+    
 }
