@@ -184,8 +184,11 @@ function avgRate(position,rating){
         if (restaurants[i][0] == position){
             //take the rating of the restaurant and find avg rate
             let sum = Number(rating) + restaurants[i][1];
-            let avg = Math.round(sum/2);
-            return document.getElementById("resturantRate").innerHTML = "Average Rating: "+avg;
+            let avg = (sum/2).toFixed(1);
+            //show avg rating
+            document.getElementById("resturantRate").innerHTML = "Average Rating: "+avg;
+            //put the rating into restaurants array
+            return restaurants[i][1] = avg
         }
     }
     
