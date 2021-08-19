@@ -17,7 +17,7 @@ function logIn(){
     for (let i = 0; i < accounts.length; i++){
         if ((accounts[i]).includes(username) && (accounts[i]).includes(password)){
             //print out login is complete 
-            alert("login is complete");
+            return alert("login is complete");
         }
     }
     //if username and password is not in accounts then show message
