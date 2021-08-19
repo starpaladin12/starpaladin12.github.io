@@ -53,10 +53,11 @@ function reviewForum(){
     reviewLable.setAttribute("for","review");
     reviewLable.innerHTML = "Write a review:";
     //state review = to a input tag with type = text and name is reivew
-    let reviews = document.createElement("input")
-    reviews.setAttribute("type","text");
-    reviews.setAttribute("name","review");
+    let review = document.createElement("input")
+    review.setAttribute("type","text");
+    review.setAttribute("name","review");
     //review id = review
-    reviews.id = "review";
-
+    review.id = "review";
+    //put all elements that need to be in forum tag inside a list in order to easilly append them into forum
+    let forumTags = [pickLabel,pick,ratingLabel,rating,reviewLable,review]
 }
