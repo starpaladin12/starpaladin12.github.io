@@ -35,11 +35,11 @@ function writeReview(){
             reviewInfo.innerHTML = "Rating given: "+review[2]+"<br>"+review[1];
             //append reviewInfo into reviewContain
             reviewContain.appendChild(reviewInfo);
+            reviewsTag.push(reviewContain);
         }
     }
     //call avgRate
     //test if you can save html tags in a list?
-    reviewsTag.push([reviewContain]);
     //put review into reviews as a nested array
     return reviews.push(review);
 }

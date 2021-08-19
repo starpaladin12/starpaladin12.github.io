@@ -23,6 +23,8 @@ function createContainer(){
         rate.className = "container";
         //set class name for box as box
         box.className = "box";
+        //set id for box to icon and change it for every icon restaurant
+        box.id = "icon"+i
         //create id for button to be button plus the value of i 
         click.id = "button"+i;
         //call function setInfo to put information into each element 
@@ -34,13 +36,50 @@ function createContainer(){
     document.getElementById("button2").addEventListener("click",WorldBurgerReviews);
 }
 function ThaiExpressReviews(){
-    
+    //create a div element to store all the reviews 
+    let reviewsContainer = document.createElement("div");
+    reviewsContainer.className = "reviewList";
+    reviewsContainer.id = "firstReviews"
+    //create a for loop to go through the number of reviews created which is stored in reviews
+    for (let i = 0; i < reviewsTag.length; i++){
+        if (reviewsTag[i].className == "Thai Express"){
+         reviewsContainer.append(reviewsTag[i]);
+        }
+    }
+    //put the user review under the restaurants icon
+    let refrence = document.getElementById("icon0");
+    return refrence.insertAdjacentElement("afterend",reviewsContainer);
 }
 function LoneStarReviews(){
-
+     //create a div element to store all the reviews 
+     let reviewsContainer = document.createElement("div");
+     reviewsContainer.className = "reviewList";
+     reviewsContainer.id = "secondReviews"
+     //create a for loop to go through the number of reviews created which is stored in reviews
+     for (let i = 0; i < reviewsTag.length; i++){
+        if (reviewsTag[i].className == "Lone Star"){
+        reviewsContainer.append(reviewsTag[i]);
+        }
+     }
+     //put the user review under the restaurants icon
+     let refrence = document.getElementById("icon1");
+     return refrence.insertAdjacentElement("afterend",reviewsContainer);
 }
 function WorldBurgerReviews(){
-
+     //create a div element to store all the reviews 
+     let reviewsContainer = document.createElement("div");
+     reviewsContainer.className = "reviewList";
+     reviewsContainer.id = "thirdReviews"
+     //create a for loop to go through the number of reviews created which is stored in reviews
+     for (let i = 0; i < reviewsTag.length; i++){
+         //check if div class name is the same as resturant
+         if (reviewsTag[i].className == "World Burger"){
+         reviewsContainer.append(reviewsTag[i]);
+         }
+     }
+     //put the user review under the restaurants icon
+     let refrence = document.getElementById("icon2");
+     return refrence.insertAdjacentElement("afterend",reviewsContainer);
 }
 //create setInfo to put information from resturants array into the elements I have created
 function setInfo(contain,title, rate, info, box, click){
