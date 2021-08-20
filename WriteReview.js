@@ -35,7 +35,7 @@ function writeReview(){
             //set reviewContain to a dev element
             let reviewContain = document.createElement("div");
             //set reviewContain class to the restaurant name
-            reviewContain.className = restaurants[i][0];
+            reviewContain.className = restaurants[i][0].replace(" ","");
             //state reviewInfo to a p tag
             let reviewInfo = document.createElement("p");
             //put content and rating into reviewInfo
@@ -61,6 +61,8 @@ function showReviewsButton(){
     showReview.addEventListener("click",showReviews);
     //set value inside button
     showReview.innerHTML = "Show your reviews";
+    //add a class name
+    showReview.className = "headerbutton";
     //state logout id to be logout
     showReview.id = "showReviews"
     //append logout into body beside the other buttons
@@ -93,6 +95,7 @@ function showReviews(){
         if (reviews[i][0] == activeAccount){
             //if so then combine all the review elments: positon, rating, and content to show the review the user made
             let review = document.createElement("p");
+            review.className = "reviews";
             review.id = "review"+i;
             review.innerHTML = "Reviewed: "+reviews[i][1]+"<br>"+"Rating given: "+reviews[i][3]+"<br>"+reviews[i][2];
             personalReviews.appendChild(review);
@@ -194,6 +197,7 @@ function avgRate(position,rating){
             //show avg rating
             document.getElementById("resturantRate"+i).innerHTML = "Average Rating: "+avg;
             //put the rating into restaurants array
+            console.log(restaurants)
             return restaurants[i][1] = Number(avg)
             
         }

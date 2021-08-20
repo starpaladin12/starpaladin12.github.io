@@ -1,5 +1,5 @@
 //create an array that has a lists that contain the name of a restuarant and its ratting
-let restaurants = [["Thai Express",4],["Lone Star", 2],["World Burger", 3]];
+let restaurants = [["Thai Express",4],["Lone Star", 5],["World Burger", 3]];
 
 
 createContainer();
@@ -51,7 +51,7 @@ function ThaiExpressReviews(){
     reviewsContainer.id = "firstReviews"
     //create a for loop to go through the number of reviews created which is stored in reviews
     for (let i = 0; i < reviewsTag.length; i++){
-        if (reviewsTag[i].className == "Thai Express"){
+        if (reviewsTag[i].className == "ThaiExpress"){
          reviewsContainer.append(reviewsTag[i]);
         }
     }
@@ -73,7 +73,7 @@ function LoneStarReviews(){
      reviewsContainer.id = "secondReviews"
      //create a for loop to go through the number of reviews created which is stored in reviews
      for (let i = 0; i < reviewsTag.length; i++){
-        if (reviewsTag[i].className == "Lone Star"){
+        if (reviewsTag[i].className == "LoneStar"){
         reviewsContainer.append(reviewsTag[i]);
         }
      }
@@ -96,7 +96,7 @@ function WorldBurgerReviews(){
      //create a for loop to go through the number of reviews created which is stored in reviews
      for (let i = 0; i < reviewsTag.length; i++){
          //check if div class name is the same as resturant
-         if (reviewsTag[i].className == "World Burger"){
+         if (reviewsTag[i].className == "WorldBurger"){
          reviewsContainer.append(reviewsTag[i]);
          }
      }

@@ -43,6 +43,7 @@ function logOutButton(){
     logout.addEventListener("click",logOut);
     //set value inside button
     logout.innerHTML = "Log out";
+    logout.className = "headerbutton";
     //state logout id to be logout
     logout.id = "logout"
     //append logout into body beside the other buttons
