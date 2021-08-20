@@ -15,7 +15,7 @@ function createContainer(){
         let title = document.createElement("p");
         let rate = document.createElement("p");
         //set id for rate
-        rate.id = "resturantRate";
+        rate.id = "resturantRate"+i;
         //create box to equal a div element and click to equal a button element
         let box = document.createElement("div");
         let click = document.createElement("button");
