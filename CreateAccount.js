@@ -68,7 +68,7 @@ function signUpForum(){
     passwordLabel.innerHTML = "password:"
     //create passwordInput = input element
     let passwordInput = document.createElement("input");
-    passwordInput.setAttribute("type","text");
+    passwordInput.setAttribute("type","password");
     passwordInput.setAttribute("name","password");
     //set id for passwordInput to password
     passwordInput.id = "password";
