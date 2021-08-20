@@ -84,6 +84,7 @@ function showReviews(){
     //state heading to hold a h1 element to put into the div element
     let heading = document.createElement("h1");
     heading.id = "userReviewTitle";
+    heading.innerHTML = "Account Reviews";
     //put heading into the div element
     personalReviews.appendChild(heading);
     //go through reviews list with loop
