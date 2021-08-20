@@ -81,6 +81,11 @@ function showReviews(){
     //create a div element to hold all the reviews created for that account
     let personalReviews = document.createElement("div");
     personalReviews.id = "accountReviews"
+    //state heading to hold a h1 element to put into the div element
+    let heading = document.createElement("h1");
+    heading.id = "userReviewTitle";
+    //put heading into the div element
+    personalReviews.appendChild(heading);
     //go through reviews list with loop
     for (let i = 0; i < reviews.length; i++){
         //check if current account is the same account used to make the reviews 
