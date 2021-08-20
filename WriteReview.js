@@ -188,8 +188,8 @@ function avgRate(position,rating){
             //show avg rating
             document.getElementById("resturantRate").innerHTML = "Average Rating: "+avg;
             //put the rating into restaurants array
-            restaurants[i][1] = avg
-            return console.log(restaurants)
+            return restaurants[i][1] = Number(avg)
+            
         }
     }
     
