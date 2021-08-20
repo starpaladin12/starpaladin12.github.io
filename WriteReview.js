@@ -180,8 +180,9 @@ function reviewForum(){
 }
 function avgRate(position,rating){
     //check which restaurant to take rating from using loop
-    for ( let i = 0; i <restaurants.length; i++){
-        if (restaurants[i][0] == position){
+    console.log(position);
+    for ( let i = 0; i < restaurants.length; i++){
+        if ((restaurants[i])[0] == position){
             //take the rating of the restaurant and find avg rate
             let sum = Number(rating) + restaurants[i][1];
             let avg = (sum/2).toFixed(1);
