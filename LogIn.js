@@ -33,7 +33,7 @@ function logIn(){
         }
     }
     //if username and password is not in accounts then show message
-    return alert("No account exists with that account name");
+    return alert("No account exists ");
 }
 //logOutButton creates the button to log out
 function logOutButton(){
