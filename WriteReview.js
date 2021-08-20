@@ -39,7 +39,7 @@ function writeReview(){
             //state reviewInfo to a p tag
             let reviewInfo = document.createElement("p");
             //put content and rating into reviewInfo
-            reviewInfo.innerHTML = "Rating given: "+rating+"<br>"+content;
+            reviewInfo.innerHTML = "User: "+activeAccount+"<br>Rating given: "+rating+"<br>"+content;
             //append reviewInfo into reviewContain
             reviewContain.appendChild(reviewInfo);
             reviewsTag.push(reviewContain);
@@ -180,18 +180,16 @@ function reviewForum(){
 }
 function avgRate(position,rating){
     //check which restaurant to take rating from using loop
-    console.log(position);
     for ( let i = 0; i < restaurants.length; i++){
         if ((restaurants[i])[0] == position){
             //take the rating of the restaurant and find avg rate
             let sum = Number(rating) + restaurants[i][1];
             let avg = (sum/2).toFixed(1);
             //show avg rating
-            document.getElementById("resturantRate").innerHTML = "Average Rating: "+avg;
+            document.getElementById("resturantRate"+i).innerHTML = "Average Rating: "+avg;
             //put the rating into restaurants array
             return restaurants[i][1] = Number(avg)
             
         }
-    }
-    
+    } 
 }
