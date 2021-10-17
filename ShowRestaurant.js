@@ -1,9 +1,9 @@
-//create an array that has a lists that contain the name of a restuarant and its ratting
-let restaurants = [["Thai Express",4],["Lone Star", 5],["World Burger", 3]];
+
 
 
 createContainer();
 function createContainer(){
+    let restaurants = JSON.parse(localStorage.getItem("restaurants"));
     //create a for loop that goes through the number of restaurants in restaurants array
     //set info to the same value as restaurants to change the value but still keep the orginal array in restaurants
     let info = [["Thai Express",4],["Lone Star", 5],["World Burger", 3]];
@@ -19,6 +19,11 @@ function createContainer(){
         //create box to equal a div element and click to equal a button element
         let box = document.createElement("div");
         let click = document.createElement("button");
+        let link = document.createElement("a");
+        //create id for link
+        link.id = "link"+i;
+        //create class name for link
+        link.className = "links";
         //set the class of the div and two other p elements to container in order to design them later
         contain.className = "container";
         title.className = "container";
@@ -30,12 +35,15 @@ function createContainer(){
         //create id for button to be button plus the value of i 
         click.id = "button"+i;
         //call function setInfo to put information into each element 
-        setInfo(contain, title, rate, info, box, click);
+        setInfo(contain, title, rate, info, box, click, link);
     }
-    //give a onclick event to each button created to a corrisbonding funciton
-    document.getElementById("button0").addEventListener("click",ThaiExpressReviews);
-    document.getElementById("button1").addEventListener("click",LoneStarReviews);
-    document.getElementById("button2").addEventListener("click",WorldBurgerReviews);
+    //go through element links class name to add attributes
+    for (let i = 0; i < document.getElementsByClassName("links").length; i++){
+        document.getElementsByClassName("links")[i].setAttribute("target","_blank");
+        document.getElementsByClassName("links")[i].setAttribute("type","button");
+        document.getElementsByClassName("links")[i].setAttribute("href","/html files/"+restaurants[i][0]+".html");
+    }
+
 }
 check1 = true;
 function ThaiExpressReviews(){
@@ -105,19 +113,20 @@ function WorldBurgerReviews(){
      return refrence.insertAdjacentElement("afterend",reviewsContainer);
 }
 //create setInfo to put information from resturants array into the elements I have created
-function setInfo(contain,title, rate, info, box, click){
+function setInfo(contain,title, rate, info, box, click, link){
     title.innerHTML = (info[0])[0];
     rate.innerHTML = "Average Rating:  "+(info[0])[1];
     //remove the first list in info to add the next information to the next container
     info.shift();
     //put the title and rate element into the div element contain
-    contain.appendChild(title);
-    contain.appendChild(rate);
+    link.appendChild(title);
+    link.appendChild(rate);
+    click.appendChild(link)
     //put contain into click and click into box
-    click.appendChild(contain);
+    contain.appendChild(click);
     //put click inside the div element
-    box.appendChild(click);
+    box.appendChild(contain);
     //put div element into html body
-    return document.body.appendChild(box);   
+    return document.getElementById("CardIcons").appendChild(box);   
 }
 

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Express</title>
+    <link rel="stylesheet" href="/css files/ThaiExpress.css">
+</head>
+<body>
+    <div class= "header">
+        <div class="titleContainer">
+            <p class="title">Restaurant Review</p>
+        </div>
+        <div id="profileContainer">
+           <a href="/html files/UserAccount.html" target="_blank" id="linkProfile"></a>
+        </div>
+    </div>
+    <div id="ImgContainer">
+        <img src="/ResturantIntroImages/ThaiIntro.jpg" alt="error" id="ImageTitle">
+    </div>
+    <h1>Thai Express</h1>
+    <div id="ReviewsBox"></div>
+    <button type="button"><a id="writeReviewPage" class="accounts" href="/html files/WriteReview.html" target="_blank">Write Review</a></button>
+    <script>
+
+        //if there is an active account then show their avatar
+        if (localStorage.getItem("activeAccount") != ""){
+            let accounts = JSON.parse(localStorage.getItem("accounts"));
+            //create img element and then put it in button element
+            let img = document.createElement("img");
+            img.id = "profilePic";
+            img.setAttribute("alt","error");
+            //look through account array to find the profile pic of current account
+            for (let i = 0; i < accounts.length; i++){
+                //go through global list to find the account that is used by user
+                if (accounts[i][0].includes(localStorage.getItem("activeAccount"))){
+                    img.src = accounts[i][2]
+                }
+            }
+            //append img into button
+            document.getElementById("linkProfile").appendChild(img);
+            //if there is no active account then get rid of the img element
+        }else if (localStorage.getItem("activeAccount") == ""){
+            document.getElementById("profilePic").remove();
+        }
+    </script>
+    <script>
+        //change star review images based on the reviews of the resturant
+        function reviews(){
+            //create img object called stars
+            let stars = document.createElement("img");
+            stars.setAttribute("alt","error");
+            
+            //take rating of current resturant in rusturants array
+            let rtg = ((JSON.parse(localStorage.getItem("restaurants"))))[0][1];
+            console.log(rtg);
+            //check if the rating is a decimal then show a half star img
+            //if rating is a whole number then show the whole five review star images
+            switch (Math.floor(rtg)){
+                case 0:
+                    //check if the 0 and half and add that img
+                    if (rtg >= 0.5 && rtg <= 0.9){
+                        stars.setAttribute("src","/ReviewStars/HalfStar.png");
+                        document.getElementById("ReviewsBox").appendChild(stars);
+                        break;
+                    }
+                    stars.src = "/ReviewStars/EmptyStars.png";
+                    document.getElementById("ReviewsBox").appendChild(stars);
+                    break;
+                case 1:
+                    if (rtg >= 1.5 && rtg <= 1.9){
+                        stars.setAttribute("src","/ReviewStars/OneHalfStars.png");
+                        document.getElementById("ReviewsBox").appendChild(stars);
+                        break;
+                    }
+                    stars.src = "/ReviewStars/OneStar.png";
+                    document.getElementById("ReviewsBox").appendChild(stars);
+                    break;
+                case 2:
+                    if (rtg >= 2.5 && rtg <= 2.9){
+                        stars.setAttribute("src","/ReviewStars/OneHalfStars.png");
+                        document.getElementById("ReviewsBox").appendChild(stars);
+                        break;
+                    }
+                    stars.src = "/ReviewStars/TwoStars.png";
+                    document.getElementById("ReviewsBox").appendChild(stars);
+                    break;
+                case 3:
+                    if (rtg >= 3.5 && rtg <= 3.9){
+                        stars.setAttribute("src","/ReviewStars/OneHalfStars.png");
+                        document.getElementById("ReviewsBox").appendChild(stars);
+                        break;
+                    }
+                    stars.src = "/ReviewStars/ThreeStars.png";
+                    document.getElementById("ReviewsBox").appendChild(stars);
+                    break;
+                case 4:
+                    if (rtg >= 4.5 && rtg <= 4.9){
+                        stars.setAttribute("src","/ReviewStars/OneHalfStars.png");
+                        document.getElementById("ReviewsBox").appendChild(stars);
+                        break;
+                    }
+                    stars.src = "/ReviewStars/FourStars.png";
+                    document.getElementById("ReviewsBox").appendChild(stars);
+                    break;
+                case 5:
+                    stars.src = "/ReviewStars/FiveStars.png";
+                    document.getElementById("ReviewsBox").appendChild(stars);
+                    break;
+            }
+            
+        }
+        reviews();
+    </script>
+</body>
+</html>

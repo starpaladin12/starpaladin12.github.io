@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="/css files/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-black">
+        <div class="container-fluid">
+            <span class="border border-white" >
+                <div class="bg-secondary">
+                    <div class="container">
+                        <p class="navbar-brand fw-bold text-center  m-0" style="color:black;">Review Website</p>
+                    </div>
+                </div>
+            </span>
+            <div class="container">
+                <div class="row">
+                    <div class="col mb-1 pt-4 pe-0">
+                        <nav class="navbar-nav flex-row justify-content-end ">
+                            <a class="nav-link me-3" id="signUp" href="/html files/CreateAccount.html" target="_blank" style="color: white;">Sign up</a>
+                            <a class="nav-link me-3" id="logInPage" href="/html files/LogIn.html" target="_blank" style="color: white;">Log In</a>
+                            <a class="nav-link me-3" id="writeReviewPage" href="/html files/WriteReview.html" target="_blank" style="color: white;">Write Review</a>
+                        </nav>
+                    </div>
+                    <div class="col-1 ps-0">
+                        <li class="nav-item dropdown"> 
+                            <a id="accountButton" class=" nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"   style="color: white;">Account</a>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end " >
+                                <li>
+                                    <img class="dropdown-item" src="/signUpImages/profilePic.png" width="78px" height="95px" alt="error">
+                                </li>
+                                <li class="nav-items">
+                                    <p class="dropdown-item">Account name</p>
+                                </li>
+                                <li class="nav-item"><hr class="dropdown-divider"></li>
+                                <li class="nav-items">
+                                    <a class="dropdown-item" id="accountPage" href="/html files/UserAccount.html" target="_blank">View Account</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
+                </div>
+            </span>
+            
+        </div>
+    </nav>
+    
+
+    <div id="CardIcons">
+            
+    </div>
+    <script>
+        function check(){
+            let activeAccount = localStorage.getItem("activeAccount");
+            //check if there is a value in active account and if so return message
+            if (activeAccount != ""){
+                alert("You already loged in");
+                return document.getElementById("logInPage").removeAttribute("href");
+            }else if(activeAccount == ""){
+                return document.getElementById("logInPage").setAttribute("href","/html files/LogIn.html")
+            }
+        }
+        function checkAccount(){
+            let activeAccount = localStorage.getItem("activeAccount");
+            //check if user loged in and if not then tell user to log in 
+            if (activeAccount == ""){
+                alert("There is no account to view.\n Login in order to view your account.");
+                return document.getElementById("accountPage").removeAttribute("href");
+            }else if( activeAccount != ""){
+                return document.getElementById("accountPage").setAttribute("href","/html files/UserAccount.html");
+            }
+        }
+        function checkWriteReview(){
+            let activeAccount = localStorage.getItem("activeAccount");
+            //check if user loged in and if not then tell user to log in 
+            if (activeAccount == ""){
+                alert("You can't write a review.\n Login in order to write a review.");
+                return document.getElementById("writeReviewPage").removeAttribute("href");
+            }else if( activeAccount != ""){
+                return document.getElementById("writeReviewPage").setAttribute("href","/html files/WriteReview.html");
+            }
+        }
+    </script>
+    <script src="/PublicValues.js"></script>
+    <script src="/ShowRestaurant.js"></script>
+    <script src="/CreateAccount.js"></script>
+    <script src="/LogIn.js"></script>
+    <script src="/WriteReview.js"></script>
+    <!--Set up proxy account-->
+    <script src="/proxy.js"></script>
+</body>
+</html> 

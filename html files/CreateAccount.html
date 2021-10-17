@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <!-- CSS only -->
+  
+    
+    <link rel="stylesheet" href="/css files/createAccount.css">
+</head>
+<body>
+    <div class= "header">
+        <div class="titleContainer">
+            <a href="/html files/index.html" class="title" onclick="window.top.close();">Restaurant Review</a>
+        </div>
+        <div id="buttons">
+            <button type="button" id="mainPage" class="headerbutton" onclick="window.top.close();">Return to main page</button>
+        </div>
+    </div>
+    <h1>Create an Account</h1>
+    <div id="createAccountForum">
+        <form onsubmit="return false">
+            <label for="username">Username:</label> 
+            <br>
+            <input type="text" name="username" placeholder="username" id="username">
+            <br>
+            <br>
+            <label for="password">Password:</label>
+            <br>
+            <div id="passwordContain"></div>
+                <input type="password" name="password" placeholder="password" id="password">
+                <input type="image" src="/signUpImages/eyeOpen.png" alt="text" width="25px" height="20px" id="eye" onclick="showPassword();"/>    
+            </div>
+        </form>
+        <button id="createButton" type="button" onclick="signUp();">Create an Account</button>
+    </div>
+    <p id="logInText">Already have an account? Then <a id="logIn"  target="_blank" href="/html files/LogIn.html">log in</a></p>
+    <div id="image">
+        <img src="/signUpImages/SignUpImage.png" alt="error" id="signUpImage">
+    </div>
+    <script>
+        let Open = true
+        function showPassword(){
+            if (Open){
+                //change Open to false
+                Open = false;
+                //change the type of the input id="password" to text to see the values written
+                document.getElementById("password").setAttribute("type","text");
+                //change the image of eyeOpen to eyeClose
+                return document.getElementById("eye").src = "/signUpImages/eyeClose.png";       
+            }else{
+                Open = true;
+                //change the type of the input id="password" to password to hide the values written
+                document.getElementById("password").setAttribute("type","password");
+                //change the image of eyeOpen to eyeClose
+                return document.getElementById("eye").src = "/signUpImages/eyeOpen.png";  
+                  
+            }
+        }   
+    </script>
+    <script src="/CreateAccount.js"></script>
+</body>
+</html>

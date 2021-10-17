@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="/css files/LogIn.css">
+</head>
+<body>
+    <div class= "header">
+        <div class="titleContainer">
+            <a href="/html files/index.html" class="title" onclick="window.top.close();">Restaurant Review</a>
+        </div>
+    </div>
+    <h1>Log In</h1>
+    <div id="logInForum">
+        <form onsubmit="return false">
+            <label for="username">Username:</label> 
+            <br>
+            <input type="text" name="username" placeholder="username" id="username">
+            <br>
+            <br>
+            <label for="password">Password:</label>
+            <br>
+            <div id="passwordContain"></div>
+                <input type="password" name="password" placeholder="password" id="password">
+                <input type="image" src="/signUpImages/eyeOpen.png" alt="text" width="25px" height="20px" id="eye" onclick="showPassword();"/>    
+            </div>
+        </form>
+        <button id="createButton" type="button" onclick="logIn();">Log In</button>
+    </div>
+    <div id="image">
+        <img src="/signUpImages/LogInImage.jpeg" alt="error" id="logInImage">
+    </div>
+    <script>
+        let Open = true
+        function showPassword(){
+            if (Open){
+                //change Open to false
+                Open = false;
+                //change the type of the input id="password" to text to see the values written
+                document.getElementById("password").setAttribute("type","text");
+                //change the image of eyeOpen to eyeClose
+                return document.getElementById("eye").src = "/signUpImages/eyeClose.png";       
+            }else{
+                Open = true;
+                //change the type of the input id="password" to password to hide the values written
+                document.getElementById("password").setAttribute("type","password");
+                //change the image of eyeOpen to eyeClose
+                return document.getElementById("eye").src = "/signUpImages/eyeOpen.png";   
+            }
+        }  
+    </script>
+    <script src="/LogIn.js"></script>
+</body>
+</html>

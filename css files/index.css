@@ -1,0 +1,56 @@
+body{
+    background-color: whitesmoke;
+    color: darkorange;
+}
+#signUp:hover,#logInPage:hover,#writeReviewPage:hover{
+    text-decoration:  underline white 5px; 
+}
+#accountButton{
+    width: 78px;
+    height: 65px;
+    border-radius: 25px;
+}
+#CardIcons{
+    position: static;
+    margin-top: 100px;
+}
+.links{
+    text-decoration: none;
+    color: black;
+}
+#button0,#button1,#button2{
+    margin-left: 580px;
+    background-color: #97d82d;
+    border: 5px solid #45488e;
+    font-weight: bolder;
+
+}
+.box{
+    margin: auto;
+}
+#icon0,#icon1,#icon2{
+    margin: 5px;
+}
+.reviewList{
+    margin-left: 620px;
+}
+.ThaiExpress,.LoneStar,.WorldBurger{
+    height: 80px;
+    width: 210px;
+    background-color: white;
+    border: 4px solid #45488e;
+    border-radius: 10px;
+    color: black;
+}
+.reviews{
+    margin:auto;
+    height: 80px;
+    width: 210px;
+    background-color: white;
+    border: 4px solid #45488e;
+    border-radius: 10px;
+    color: black;
+}
+#logIn,#reviewContain{
+    margin-left: 580px;
+}

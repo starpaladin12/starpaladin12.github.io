@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/css files/userAccount.css">
+    <script>
+        function heading(){
+            return document.title = localStorage.getItem("activeAccount");
+        }
+    </script>
+</head>
+<body onload="heading();">
+    <div id="profileContainer" onmouseover="addLabel();" onmouseout="removeLabel();">
+        <img  alt="error" id="profilePic" onclick="replaceImg();">
+        <p id="changeLabel" onclick="replaceImg();"></p>
+        <p id="profileName"></p>
+    </div>
+    <button type="button" onclick="showAccount();" id="accountInfoButton" >Account Info</button>
+    <div id="accountInfo"></div>
+    <button type="button" onclick="signOut();" id="signOut">Sign Out</button>
+    <hr>
+    <h1>Personal Reviews</h1>
+    <div id="accountReviews"></div>
+    <script>
+        console.log(JSON.parse(localStorage.getItem("accounts")));
+        //find active account and set the avatar link to profile pic
+        let accounts = JSON.parse(localStorage.getItem("accounts"));
+        let profilePic;
+        for (let i = 0; i<accounts.length;i++){
+            if (accounts[i][0].includes(localStorage.getItem("activeAccount"))){
+                profilePic = accounts[i][2];
+                break;
+            }
+        }
+        //set src of img to avatar value from local storage
+        document.getElementById("profilePic").src = profilePic;
+        function username(){
+            let username = localStorage.getItem("activeAccount")
+            return document.getElementById("profileName").innerHTML = username; 
+        }
+        username();
+    </script>
+    <script src="/UserAccount.js"></script>
+    <script src="/ReplaceImage.js"></script>
+</body>
+</html>
